@@ -1,0 +1,149 @@
+body {
+      margin: 0;
+      overflow: hidden; /* Hide scrollbars */
+        touch-action: none;
+          -webkit-tap-highlight-color: transparent;
+            overflow: hidden;
+              user-select: none;
+    }
+
+  .game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('foxbg.png') center/cover no-repeat; /* Set background to foxbg.png */
+  }
+
+
+    .player {
+      width: 128px;
+      height: 128px;
+      background: url('idle.png') 0 0 no-repeat;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      animation: walk-animation 2s steps(8) infinite;
+    }
+
+    .enemy {
+      width: 128px;
+      height: 128px;
+      background: url('enemy.png') 0 0 no-repeat; /* Adjust the image URL */
+      position: absolute;
+      bottom: 0;
+
+      animation: walk-animation-enemy 1s steps(7) infinite;
+    }
+
+
+
+    @keyframes walk-animation {
+      to {
+        background-position: -1024px 0; /* Adjust for the width of your sprite sheet */
+      }
+    }
+
+    @keyframes walk-animation-enemy {
+      to {
+        background-position: -896px 0; /* Adjust for the width of your enemy sprite sheet */
+      }
+    }
+
+    @keyframes attack-animation {
+      to {
+        background-position: -1280px 0; /* Adjust for the width of your sprite sheet */
+      }
+    }
+
+      .health-bar-container {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 150px;
+          height: 20px;
+          background-color: #ddd;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .health-bar {
+          height: 100%;
+          background-color: #4caf50;
+          transition: width 0.3s ease;
+        }
+        .rebar-container {
+          position: absolute;
+          top: 40px; /* Adjust the top position based on your layout */
+          left: 10px;
+          width: 150px;
+          height: 10px;
+          background-color: #ddd;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+
+        .rebar {
+          height: 100%;
+          width: 0%;
+          background-color: #2196F3; /* Initial color, adjust as needed */
+          transition: width 0.3s ease;
+        }
+
+     .controls {
+       position: fixed;
+       bottom: 10px;
+       left: 10px;
+       display: flex;
+     }
+
+     button {
+       padding: 10px;
+       margin-right: 10px;
+       cursor: pointer;
+       background-color: #4caf50;
+       color: #fff;
+       border: none;
+       border-radius: 5px;
+     }
+
+     #leftButton,
+     #rightButton {
+       margin-right: 10;
+     }
+
+     #attackButton {
+       margin-left: auto;
+       bottom: 10px;
+       position: fixed;
+       right: 10px;
+     }
+
+   #ultimateButton {
+     display: none;
+     padding: 10px;
+     background-color: #f00; /* Red color for the ultimate button */
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+
+   .hit-frames-container {
+     position: absolute;
+     width: 100px; /* Adjust width as needed */
+     height: 100px; /* Adjust height as needed */
+     background-size: cover;
+   }
+  .skill-animation {
+      position: absolute;
+      width: 100px; /* Set the width of your skill animation */
+      height: 100px; /* Set the height of your skill animation */
+      background-size: cover;
+      z-index: 1; /* Ensure the skill animation is above the enemy */
+    }
+
+
+
+
+
+
